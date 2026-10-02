@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Roshni Optical — Premium eyewear, spectacles, sunglasses & vision care at Shop No. 59, Jhastam Chowk, Jijamata Stadium. 15+ years of trusted service. Call 9922381104."/>
+  <title>Roshni Optical — Clear Vision • Better Life</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#6b0119",
+            "primary-dark": "#8B1E2D",
+            "secondary": "#C9A45C",
+            "secondary-light": "#FDF8ED",
+            "surface": "#fcf9f8",
+            "surface-low": "#f6f3f2",
+            "surface-card": "#ffffff",
+            "surface-high": "#eae7e7",
+            "on-surface": "#1b1b1b",
+            "on-surface-muted": "#574142",
+            "outline": "#debfbf",
+            "gold": "#C9A45C"
+          },
+          fontFamily: {
+            "headline": ["Playfair Display", "serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overscroll-behavior: none; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #fcf9f8; }
+    ::-webkit-scrollbar-thumb { background: #C9A45C; border-radius: 4px; }
+
+    /* Mobile bottom dock */
+    .mobile-dock { display: none; }
+    @media (max-width: 767px) {
+      .mobile-dock { display: flex; }
+      main { padding-bottom: 72px; }
+    }
+
+    /* Gallery hover overlay */
+    .gallery-card:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay { opacity: 0; transition: opacity 0.3s; }
+
+    /* Collection card filter */
+    .collection-card { display: flex; }
+    .collection-card.hidden-card { display: none; }
+
+    /* Admin modal */
+    .admin-modal { display: none; }
+    .admin-modal.open { display: flex; }
+
+    /* Smooth animations */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.5s ease forwards; }
+
+    /* Stats counter */
+    @keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+    .stat-num { animation: countUp 1s ease; }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+<!-- =============================================
+     TOP ANNOUNCEMENT BAR
+     ============================================= -->
+<div class="w-full bg-primary-dark text-white py-2 px-4 text-xs font-medium">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-[14px] text-secondary">location_on</span>
+      <span>Shop No. 59, Jhastam Chowk, Jijamata Stadium &nbsp;•&nbsp; Mon–Sat: 10 AM – 9 PM</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="tel:9922381104" class="flex items-center gap-1 font-bold hover:text-secondary transition-colors">
+        <span class="material-symbols-outlined text-[14px] text-secondary">call</span>
+        9922381104
+      </a>
+      <span class="hidden md:inline text-white/30">|</span>
+      <span class="hidden md:inline text-secondary text-[11px] tracking-widest uppercase font-bold">15+ Yrs Optical Excellence</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     STICKY NAVBAR
+     ============================================= -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-outline/50 shadow-sm" id="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-2.5 shrink-0 group">
+      <img src="images/logo.png" alt="Roshni Optical Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="hidden w-10 h-10 bg-primary rounded-full items-center justify-center text-white font-bold font-headline text-lg">R</div>
+      <div class="flex flex-col leading-none">
+        <span class="font-headline text-xl font-bold text-primary tracking-tight">Roshni Optical</span>
+        <span class="text-[10px] font-bold text-secondary tracking-widest uppercase">Clear Vision • Better Life</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-6 text-[13px] font-semibold">
+      <a href="#hero" class="text-primary hover:text-primary-dark transition-colors">Home</a>
+      <a href="#collections" class="text-on-surface-muted hover:text-primary transition-colors">Collections</a>
+      <a href="#services" class="text-on-surface-muted hover:text-primary transition-colors">Services</a>
+      <a href="#about" class="text-on-surface-muted hover:text-primary transition-colors">About</a>
+      <a href="#gallery" class="text-on-surface-muted hover:text-primary transition-colors">Gallery</a>
+      <a href="#location" class="text-on-surface-muted hover:text-primary transition-colors">Location</a>
+      <a href="#contact" class="text-on-surface-muted hover:text-primary transition-colors">Contact</a>
+    </nav>
+
+    <!-- Desktop CTA Buttons -->
+    <div class="hidden sm:flex items-center gap-2 shrink-0">
+      <a href="https://wa.me/919922381104?text=Hello%20Roshni%20Optical%2C%20I%20need%20eyewear%20assistance" target="_blank" rel="noopener"
+         class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-sm">
+        <span class="material-symbols-outlined text-[15px]">chat</span>
+        WhatsApp
+      </a>
+      <a href="tel:9922381104"
+         class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary hover:bg-primary-dark text-white text-xs font-bold transition-all shadow-sm">
+        <span class="material-symbols-outlined text-[15px]">call</span>
+        Call Now
+      </a>
+      <!-- Admin Panel trigger (subtle) -->
+      <button onclick="openAdmin()" class="flex items-center gap-1 px-3 py-2 rounded-full text-xs font-semibold text-on-surface-muted hover:bg-surface-high border border-outline/40 transition-all" title="Admin Panel">
+        <span class="material-symbols-outlined text-[16px]">admin_panel_settings</span>
+      </button>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl hover:bg-surface-high transition-colors" id="hamburger">
+      <span class="material-symbols-outlined text-[24px] text-on-surface" id="hamburger-icon">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Nav Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-outline/30 px-4 py-4 flex flex-col gap-1">
+    <a href="#hero" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-primary bg-surface-low">🏠 Home</a>
+    <a href="#collections" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-on-surface hover:bg-surface-low">👓 Collections</a>
+    <a href="#services" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-on-surface hover:bg-surface-low">🛠️ Services</a>
+    <a href="#about" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-on-surface hover:bg-surface-low">ℹ️ About Us</a>
+    <a href="#gallery" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-on-surface hover:bg-surface-low">📸 Gallery</a>
+    <a href="#location" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-on-surface hover:bg-surface-low">📍 Location</a>
+    <a href="#contact" onclick="closeMobileMenu()" class="py-3 px-4 rounded-xl text-sm font-semibold text-on-surface hover:bg-surface-low">📞 Contact</a>
+    <div class="flex gap-2 mt-2 pt-2 border-t border-outline/30">
+      <a href="tel:9922381104" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-primary text-white text-sm font-bold">
+        <span class="material-symbols-outlined text-[18px]">call</span> Call Now
+      </a>
+      <a href="https://wa.me/919922381104" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white text-sm font-bold">
+        <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+      </a>
+    </div>
+    <button onclick="openAdmin(); closeMobileMenu();" class="w-full py-2.5 mt-1 rounded-xl text-xs font-semibold text-on-surface-muted bg-surface-low border border-outline/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[16px]">admin_panel_settings</span> Admin Panel
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- =============================================
+     SECTION 1: HERO
+     ============================================= -->
+<section id="hero" class="w-full py-12 md:py-20 bg-gradient-to-b from-surface-low via-surface to-surface-low border-b border-outline/30 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+      <!-- Left: Text -->
+      <div class="lg:col-span-6 flex flex-col items-start gap-5">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/20 border border-secondary/30 text-secondary font-bold text-xs uppercase tracking-widest">
+          <span class="material-symbols-outlined text-[14px]">verified</span>
+          Clear Vision • Better Life
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-headline text-3xl sm:text-4xl lg:text-[48px] lg:leading-[56px] font-bold text-primary">
+          See the World <br class="hidden sm:inline"/>with <span class="text-secondary">Clarity</span>
+        </h1>
+
+        <!-- Sub text -->
+        <p class="text-base sm:text-lg text-on-surface-muted leading-relaxed max-w-xl">
+          <strong class="text-on-surface">15+ years</strong> of trusted eyewear service at Jhastam Chowk. Premium spectacles, sunglasses & complete vision solutions for every family.
+        </p>
+
+        <!-- Trust pills -->
+        <div class="flex flex-wrap gap-3 text-xs font-semibold text-on-surface-muted">
+          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">workspace_premium</span> 100% Genuine Lenses</span>
+          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">bolt</span> Same-Day Ready</span>
+          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-[16px]">loyalty</span> Free Eye Testing</span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="#collections" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-dark text-white font-bold text-sm shadow-md transition-all">
+            Explore Collection
+            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+          </a>
+          <a href="tel:9922381104" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-outline text-on-surface font-bold text-sm shadow-sm hover:border-primary hover:text-primary transition-all">
+            <span class="material-symbols-outlined text-[18px] text-primary">call</span>
+            Call: 9922381104
+          </a>
+          <a href="https://wa.me/919922381104?text=Hi%20Roshni%20Optical%2C%20I%20am%20interested%20in%20eyewear" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold text-sm hover:bg-emerald-600 hover:text-white transition-all">
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Storefront Image -->
+      <div class="lg:col-span-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <img src="images/10_storefront.jpg" alt="Roshni Optical Storefront" class="w-full h-[360px] md:h-[440px] object-cover hover:scale-105 transition-transform duration-500"
+               onerror="this.src='https://via.placeholder.com/600x440/8B1E2D/ffffff?text=Roshni+Optical'"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+          <!-- Open badge -->
+          <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-xs font-bold text-on-surface">Open Mon–Sat • 10 AM – 9 PM</span>
+          </div>
+          <!-- Address card -->
+          <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3 rounded-2xl flex items-center justify-between shadow-xl">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[20px]">storefront</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-on-surface">Shop No. 59, Jijamata Stadium</h4>
+                <p class="text-xs text-on-surface-muted">Jhastam Chowk • Free Eye Testing</p>
+              </div>
+            </div>
+            <a href="#location" class="text-xs font-bold text-primary flex items-center gap-1 px-3 py-1.5 bg-primary/10 rounded-full">
+              Visit Us <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gradient-to-r from-primary via-primary-dark to-primary text-white rounded-2xl p-6 shadow-xl border-t-2 border-secondary/40">
+      <div class="text-center p-2">
+        <div class="font-headline text-3xl md:text-4xl font-extrabold text-secondary">15+</div>
+        <div class="text-xs uppercase tracking-wider mt-1 opacity-80">Years Experience</div>
+      </div>
+      <div class="text-center p-2 border-l border-white/20">
+        <div class="font-headline text-3xl md:text-4xl font-extrabold text-secondary">5000+</div>
+        <div class="text-xs uppercase tracking-wider mt-1 opacity-80">Happy Customers</div>
+      </div>
+      <div class="text-center p-2 border-l border-white/20">
+        <div class="font-headline text-3xl md:text-4xl font-extrabold text-secondary">1000+</div>
+        <div class="text-xs uppercase tracking-wider mt-1 opacity-80">Frame Collection</div>
+      </div>
+      <div class="text-center p-2 border-l border-white/20">
+        <div class="font-headline text-3xl md:text-4xl font-extrabold text-secondary">3000+</div>
+        <div class="text-xs uppercase tracking-wider mt-1 opacity-80">Eye Tests Done</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 2: COLLECTIONS (Dynamic + Admin)
+     ============================================= -->
+<section id="collections" class="w-full py-14 md:py-20 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Our Catalog</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-1">Eyewear Collections</h2>
+        <p class="text-sm text-on-surface-muted mt-2 max-w-xl">Browse our handcrafted collection of frames, sunglasses, blue-light blockers & more.</p>
+      </div>
+      <!-- Filter Pills -->
+      <div class="flex flex-wrap gap-2" id="filter-buttons">
+        <button onclick="filterCollections('all')" class="filter-btn active-filter px-4 py-1.5 rounded-full text-xs font-bold transition-all" data-cat="all">All</button>
+        <button onclick="filterCollections('Spectacles')" class="filter-btn px-4 py-1.5 rounded-full bg-surface-high text-on-surface-muted text-xs font-semibold hover:bg-surface-high transition-all">Spectacles</button>
+        <button onclick="filterCollections('Sunglasses')" class="filter-btn px-4 py-1.5 rounded-full bg-surface-high text-on-surface-muted text-xs font-semibold hover:bg-surface-high transition-all">Sunglasses</button>
+        <button onclick="filterCollections('Prescription')" class="filter-btn px-4 py-1.5 rounded-full bg-surface-high text-on-surface-muted text-xs font-semibold hover:bg-surface-high transition-all">Prescription</button>
+        <button onclick="filterCollections('Contact Lenses')" class="filter-btn px-4 py-1.5 rounded-full bg-surface-high text-on-surface-muted text-xs font-semibold hover:bg-surface-high transition-all">Contact Lenses</button>
+        <button onclick="filterCollections('Premium')" class="filter-btn px-4 py-1.5 rounded-full bg-surface-high text-on-surface-muted text-xs font-semibold hover:bg-surface-high transition-all">Premium</button>
+      </div>
+    </div>
+
+    <!-- Collection Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="collections-grid">
+      <!-- Cards rendered by JS -->
+    </div>
+
+    <!-- Admin link -->
+    <div class="mt-6 text-center">
+      <button onclick="openAdmin()" class="inline-flex items-center gap-2 text-xs font-semibold text-on-surface-muted hover:text-primary px-4 py-2 rounded-full border border-outline/40 hover:border-primary transition-all">
+        <span class="material-symbols-outlined text-[16px]">admin_panel_settings</span>
+        Manage Collections (Admin)
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 3: SERVICES
+     ============================================= -->
+<section id="services" class="w-full py-14 md:py-20 bg-surface-low border-y border-outline/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary uppercase tracking-widest">Optical Care</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-1">Comprehensive Services</h2>
+      <p class="text-sm text-on-surface-muted mt-2 max-w-xl mx-auto">Complete eye care & vision solutions at one place.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Service 1 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">troubleshoot</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Eye Number Checking</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">Accurate computerized digital eye testing for your exact prescription.</p>
+      </div>
+      <!-- Service 2 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">precision_manufacturing</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Prescription Lens Fitting</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">Expert fitting of lenses matched to your frame and prescription.</p>
+      </div>
+      <!-- Service 3 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-primary-dark/10 text-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">visibility</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Custom Number Glasses</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">Made-to-order glasses with your exact prescription power.</p>
+      </div>
+      <!-- Service 4 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-surface-high text-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">face</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Frame Selection Help</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">Personalized help to find perfect frames for your face shape.</p>
+      </div>
+      <!-- Service 5 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">shield</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Lens Selection Guidance</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">Expert advice on single vision, bifocal, progressive lenses.</p>
+      </div>
+      <!-- Service 6 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">adjust</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Contact Lens Guidance</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">Guidance on choosing, wearing, and maintaining contact lenses.</p>
+      </div>
+      <!-- Service 7 -->
+      <div class="p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow border border-outline/20 flex flex-col gap-3 sm:col-span-2 lg:col-span-2">
+        <div class="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px]">support_agent</span>
+        </div>
+        <h3 class="font-bold text-base text-on-surface">Free Eyewear Consultation</h3>
+        <p class="text-xs text-on-surface-muted leading-relaxed">One-on-one consultation for all your vision and eyewear needs — no charge.</p>
+        <a href="https://wa.me/919922381104?text=Hello%2C%20I%20need%20eyewear%20consultation" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-white bg-emerald-50 hover:bg-emerald-600 border border-emerald-200 px-3 py-1.5 rounded-full transition-all w-fit mt-1">
+          <span class="material-symbols-outlined text-[15px]">chat</span> Book via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 4: ABOUT
+     ============================================= -->
+<section id="about" class="w-full py-14 md:py-20 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- Image -->
+      <div class="lg:col-span-5 relative">
+        <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+          <img src="images/02_shop_interior_welcome.jpg" alt="Inside Roshni Optical" class="w-full h-[340px] md:h-[420px] object-cover"
+               onerror="this.src='https://via.placeholder.com/600x420/f6f3f2/8B1E2D?text=Shop+Interior'"/>
+        </div>
+        <!-- 15 Years badge -->
+        <div class="absolute -bottom-5 right-4 bg-primary text-white p-4 rounded-2xl shadow-xl border-2 border-secondary/40">
+          <span class="font-headline text-2xl font-bold text-secondary block">15+ Years</span>
+          <span class="text-xs uppercase tracking-wide text-white/90">Trusted Since 2010</span>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="lg:col-span-7 flex flex-col gap-5 lg:pl-4">
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Our Legacy</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary">Your Reliable Vision Care Partner Since Day One</h2>
+        <p class="text-sm md:text-base text-on-surface-muted leading-relaxed">
+          Located at the heart of Jhastam Chowk, <strong class="text-on-surface">Roshni Optical</strong> has been dedicated to restoring clear vision and empowering confidence through stylish, well-crafted eyewear. We treat every customer with individual care, recommending frames that feel effortless and lenses crafted with precision.
+        </p>
+        <div class="flex flex-col gap-2.5">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+            <span class="text-sm font-semibold text-on-surface">Computerized eye examination & eye number checking</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+            <span class="text-sm font-semibold text-on-surface">1000+ handpicked spectacles & sunglasses collection</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+            <span class="text-sm font-semibold text-on-surface">Anti-reflective, blue-cut & photochromic lenses available</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[20px] text-primary">check_circle</span>
+            <span class="text-sm font-semibold text-on-surface">Friendly service & honest guidance for every family</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-2">
+          <a href="tel:9922381104" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary hover:bg-primary-dark text-white text-sm font-bold shadow-md transition-all">
+            <span class="material-symbols-outlined text-[18px] text-secondary">call</span>
+            Speak With Our Optician
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-outline text-primary text-sm font-bold hover:border-primary transition-all">
+            Book Eye Test
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 5: GALLERY
+     ============================================= -->
+<section id="gallery" class="w-full py-14 md:py-20 bg-surface-low border-y border-outline/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Real Store Tour</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-1">Inside Our Shop</h2>
+        <p class="text-sm text-on-surface-muted mt-2">Experience our showroom at Jhastam Chowk.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-surface-high text-primary text-xs font-bold shrink-0">
+        <span class="material-symbols-outlined text-[16px] text-secondary">storefront</span> Shop No. 59
+      </span>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <!-- Photo 1: Storefront (Large) -->
+      <div class="col-span-2 row-span-2 gallery-card group relative rounded-2xl overflow-hidden shadow-md bg-surface-card h-64 md:h-80">
+        <img src="images/10_storefront.jpg" alt="Roshni Optical Storefront" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+             onerror="this.parentElement.style.background='#E8E0D2'"/>
+        <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2.5 py-1 rounded-md">🏪 Storefront</span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+          <span class="text-xs font-bold text-white tracking-wide">Storefront</span>
+        </div>
+      </div>
+
+      <!-- Photos 2–10 -->
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/02_shop_interior_welcome.jpg" alt="Shop Interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Interior</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/03_counter_frame_display.jpg" alt="Counter Display" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Counter</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/01_frame_collection_tray.jpg" alt="Frame Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Frames</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/04_sunglasses_collection.jpg" alt="Sunglasses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Sunglasses</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/06_aviator_sunglasses_wall.jpg" alt="Aviator Wall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Aviator Wall</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/07_sunglasses_full_wall.jpg" alt="Sunglasses Wall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Sunglass Wall</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/08_trendy_sunglasses_display.jpg" alt="Trendy Sunglasses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Trendy</span>
+        </div>
+      </div>
+      <div class="gallery-card group relative rounded-2xl overflow-hidden shadow-md h-38 md:h-40">
+        <img src="images/09_premium_showcase_cabinet.jpg" alt="Premium Showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-3">
+          <span class="text-xs font-bold text-white bg-primary/80 px-2 py-0.5 rounded-md">Premium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 6: WHY CHOOSE US
+     ============================================= -->
+<section id="why-us" class="w-full py-14 md:py-20 bg-on-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary uppercase tracking-widest">The Roshni Standard</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-white mt-1">Why Choose Roshni Optical</h2>
+      <p class="text-sm text-white/60 mt-2">Built on 15+ years of sincere optical advice, quality craftsmanship & patient care.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 transition-all">
+        <div class="w-10 h-10 rounded-full bg-secondary/20 border border-secondary/40 text-secondary font-bold text-sm flex items-center justify-center font-headline">01</div>
+        <h3 class="font-bold text-base text-white">Quality Eyewear</h3>
+        <p class="text-xs text-white/60 leading-relaxed">Every frame and lens rigorously tested for durability and optical quality.</p>
+      </div>
+      <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 transition-all">
+        <div class="w-10 h-10 rounded-full bg-secondary/20 border border-secondary/40 text-secondary font-bold text-sm flex items-center justify-center font-headline">02</div>
+        <h3 class="font-bold text-base text-white">Vision Solutions</h3>
+        <p class="text-xs text-white/60 leading-relaxed">Bespoke lens powers covering complex prescriptions and special needs.</p>
+      </div>
+      <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 transition-all">
+        <div class="w-10 h-10 rounded-full bg-secondary/20 border border-secondary/40 text-secondary font-bold text-sm flex items-center justify-center font-headline">03</div>
+        <h3 class="font-bold text-base text-white">Stylish Variety</h3>
+        <p class="text-xs text-white/60 leading-relaxed">1000+ trending silhouettes — from classic to modern styles for everyone.</p>
+      </div>
+      <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 transition-all">
+        <div class="w-10 h-10 rounded-full bg-secondary/20 border border-secondary/40 text-secondary font-bold text-sm flex items-center justify-center font-headline">04</div>
+        <h3 class="font-bold text-base text-white">Personal Guidance</h3>
+        <p class="text-xs text-white/60 leading-relaxed">Patient, unhurried help choosing frames suited to your face & lifestyle.</p>
+      </div>
+      <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-5 flex flex-col gap-3 transition-all">
+        <div class="w-10 h-10 rounded-full bg-secondary/20 border border-secondary/40 text-secondary font-bold text-sm flex items-center justify-center font-headline">05</div>
+        <h3 class="font-bold text-base text-white">Customer Care</h3>
+        <p class="text-xs text-white/60 leading-relaxed">Free frame adjustments, screw tightenings & warm service for all guests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 7: LOCATION
+     ============================================= -->
+<section id="location" class="w-full py-14 md:py-20 bg-surface-low border-y border-outline/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-secondary uppercase tracking-widest">Find Us</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary mt-1">Visit Our Store</h2>
+      <p class="text-sm text-on-surface-muted mt-2">Centrally located at Jijamata Stadium, Jhastam Chowk.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <!-- Info Card -->
+      <div class="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-outline/20 flex flex-col gap-5">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-[22px]">store</span>
+          </div>
+          <div>
+            <h3 class="font-headline text-xl font-bold text-primary">Roshni Optical</h3>
+            <span class="text-xs text-secondary font-bold uppercase tracking-wider">Jhastam Chowk</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 pb-4 border-b border-outline/20">
+          <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">location_on</span>
+          <div>
+            <h4 class="font-bold text-sm text-on-surface">Address</h4>
+            <p class="text-sm text-on-surface-muted mt-0.5 leading-relaxed">Shop No. 59, Jijamata Stadium Complex, Jhastam Chowk</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 pb-4 border-b border-outline/20">
+          <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">schedule</span>
+          <div>
+            <h4 class="font-bold text-sm text-on-surface">Opening Hours</h4>
+            <p class="text-sm text-on-surface-muted mt-0.5">Monday – Saturday: <strong class="text-on-surface">10:00 AM – 9:00 PM</strong></p>
+            <p class="text-xs text-red-500 font-semibold">Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">call</span>
+          <div>
+            <h4 class="font-bold text-sm text-on-surface">Phone</h4>
+            <a href="tel:9922381104" class="text-sm font-bold text-primary hover:underline">+91 9922381104</a>
+          </div>
+        </div>
+        <!-- Action buttons -->
+        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-outline/20">
+          <a href="tel:9922381104" class="flex flex-col items-center py-3 rounded-xl bg-primary text-white text-xs font-bold hover:bg-primary-dark transition-all">
+            <span class="material-symbols-outlined text-[20px] mb-1">call</span> Call
+          </a>
+          <a href="https://wa.me/919922381104" target="_blank" rel="noopener" class="flex flex-col items-center py-3 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-all">
+            <span class="material-symbols-outlined text-[20px] mb-1">chat</span> WhatsApp
+          </a>
+          <a href="https://maps.google.com/?q=Roshni+Optical+Shop+59+Jijamata+Stadium+Jhastam+Chowk" target="_blank" rel="noopener" class="flex flex-col items-center py-3 rounded-xl bg-secondary/20 text-on-surface text-xs font-bold hover:bg-secondary hover:text-white transition-all">
+            <span class="material-symbols-outlined text-[20px] mb-1 text-secondary">directions</span> Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-outline/20 shadow-md min-h-[320px] bg-slate-100 relative flex flex-col justify-end">
+        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-slate-50"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="flex flex-col items-center animate-bounce z-10">
+            <div class="px-4 py-2 rounded-full bg-primary text-white text-xs font-bold shadow-xl flex items-center gap-2 mb-1">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Roshni Optical (Shop 59)
+            </div>
+            <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-md">
+              <span class="material-symbols-outlined text-[20px]">storefront</span>
+            </div>
+            <div class="w-2 h-2 bg-primary rotate-45 -mt-1"></div>
+          </div>
+        </div>
+        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-md border border-outline/30 text-xs text-on-surface-muted font-medium">
+          📍 Jijamata Stadium Commercial Area, Jhastam Chowk
+        </div>
+        <div class="relative z-10 m-4 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-outline/20 shadow-md flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-secondary text-[22px]">explore</span>
+            <div>
+              <h4 class="text-xs font-bold text-on-surface">Jhastam Chowk Landmark</h4>
+              <p class="text-[11px] text-on-surface-muted">Opposite Jijamata Stadium Gate</p>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Roshni+Optical+Jhastam+Chowk+Jijamata+Stadium" target="_blank" rel="noopener"
+             class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-dark transition-colors">
+            Open Maps <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SECTION 8: CONTACT / BOOK EYE TEST
+     ============================================= -->
+<section id="contact" class="w-full py-14 md:py-20 bg-surface border-b border-outline/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- Left Info -->
+      <div class="lg:col-span-5 flex flex-col gap-5">
+        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Appointments & Enquiries</span>
+        <h2 class="font-headline text-3xl md:text-4xl font-bold text-primary">Need an Eye Test or Custom Frames?</h2>
+        <p class="text-sm md:text-base text-on-surface-muted leading-relaxed">
+          Book a free computerized eye test or ask for our latest frame catalogue on WhatsApp. Our opticians are happy to help you with power verification and personalized frame fittings.
+        </p>
+        <div class="flex items-center gap-3 p-4 bg-emerald-50 rounded-2xl border border-emerald-200">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">quickreply</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm text-on-surface">Quick WhatsApp Support</h4>
+            <p class="text-xs text-on-surface-muted">Get instant estimates & catalogue pictures</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">call</span>
+            <a href="tel:9922381104" class="font-bold text-primary hover:underline">+91 9922381104</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+            <a href="https://wa.me/919922381104" target="_blank" rel="noopener" class="font-bold text-emerald-700 hover:underline">WhatsApp Chat</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">schedule</span>
+            <span class="text-on-surface-muted">Mon–Sat, 10:00 AM – 9:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-7 bg-surface-low rounded-2xl p-6 sm:p-8 shadow-md border border-outline/20">
+        <h3 class="font-headline text-xl font-bold text-primary mb-1">Book Free Eye Test or Enquire</h3>
+        <p class="text-xs text-on-surface-muted mb-5">Fill details — we'll send your message directly via WhatsApp to our optician.</p>
+        <form id="contactForm" class="flex flex-col gap-4" onsubmit="handleFormSubmit(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs font-bold text-on-surface">Full Name *</label>
+              <input id="nameInput" type="text" placeholder="e.g. Ramesh Patil" required class="px-4 py-2.5 rounded-xl bg-white border border-outline/50 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"/>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs font-bold text-on-surface">WhatsApp / Phone *</label>
+              <input id="phoneInput" type="tel" placeholder="e.g. 9922381104" required class="px-4 py-2.5 rounded-xl bg-white border border-outline/50 text-on-surface text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"/>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs font-bold text-on-surface">Service Required *</label>
+              <select id="serviceSelect" required class="px-4 py-2.5 rounded-xl bg-white border border-outline/50 text-on-surface text-sm focus:outline-none focus:border-primary">
+                <option value="Free Eye Testing">Free Computerized Eye Testing</option>
+                <option value="Prescription Spectacles">Prescription Spectacles</option>
+                <option value="Sunglasses (UV400)">Sunglasses (Polarized / UV400)</option>
+                <option value="Blue Cut Glasses">Blue Cut Computer Glasses</option>
+                <option value="Progressive Lenses">Progressive / Multifocal Lenses</option>
+                <option value="Contact Lenses">Contact Lens Consultation</option>
+                <option value="Frame Enquiry">Frame Enquiry / Other</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs font-bold text-on-surface">Preferred Visit Time</label>
+              <input id="preferredTime" type="text" placeholder="e.g. Today 5 PM / Tomorrow" class="px-4 py-2.5 rounded-xl bg-white border border-outline/50 text-on-surface text-sm focus:outline-none focus:border-primary"/>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="text-xs font-bold text-on-surface">Notes / Power Details (Optional)</label>
+            <textarea id="notesInput" rows="2" placeholder="Mention your power if known, or style preferences..." class="px-4 py-2.5 rounded-xl bg-white border border-outline/50 text-on-surface text-sm focus:outline-none focus:border-primary resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-primary to-primary-dark text-white text-sm font-bold shadow-md hover:brightness-110 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px] text-secondary">send</span>
+            Send via WhatsApp to Optician
+          </button>
+          <p class="text-[11px] text-center text-on-surface-muted">🔒 Directly connects to shop owner on WhatsApp: +91 9922381104</p>
+          <!-- Success message -->
+          <div id="formSuccess" class="hidden p-3 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+            <span>Thank you! Redirecting to WhatsApp...</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer class="w-full bg-on-surface text-white border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
+      <!-- Brand -->
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <img src="images/logo.png" alt="Roshni Optical" class="h-9 w-auto rounded-lg bg-white/10 p-1" onerror="this.style.display='none'"/>
+          <div>
+            <span class="font-headline text-xl font-bold text-white block leading-none">Roshni Optical</span>
+            <span class="text-[10px] font-bold text-secondary tracking-widest uppercase">Eyewear & Vision Care</span>
+          </div>
+        </div>
+        <p class="text-xs text-white/70 leading-relaxed">15+ years of delivering clear vision, computerized eye tests, branded sunglasses & custom lens fitting at Jhastam Chowk.</p>
+        <div class="flex items-center gap-2 text-xs font-semibold text-secondary">
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          Clear Vision • Better Life
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col gap-3">
+        <h4 class="font-bold text-sm text-secondary uppercase tracking-wider">Quick Navigation</h4>
+        <div class="grid grid-cols-2 gap-2 text-xs text-white/70">
+          <a href="#hero" class="hover:text-secondary transition-colors">Home</a>
+          <a href="#collections" class="hover:text-secondary transition-colors">Collections</a>
+          <a href="#services" class="hover:text-secondary transition-colors">Services</a>
+          <a href="#about" class="hover:text-secondary transition-colors">About Us</a>
+          <a href="#gallery" class="hover:text-secondary transition-colors">Shop Gallery</a>
+          <a href="#why-us" class="hover:text-secondary transition-colors">Why Choose Us</a>
+          <a href="#location" class="hover:text-secondary transition-colors">Store Location</a>
+          <a href="#contact" class="hover:text-secondary transition-colors">Book Eye Test</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="flex flex-col gap-3">
+        <h4 class="font-bold text-sm text-secondary uppercase tracking-wider">Visit & Contact</h4>
+        <div class="flex flex-col gap-2 text-xs text-white/70">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-[15px] text-secondary mt-0.5">storefront</span>
+            <span>Shop No. 59, Jijamata Stadium, Jhastam Chowk</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[15px] text-secondary">schedule</span>
+            <span>Mon–Sat: 10:00 AM – 9:00 PM (Sunday Closed)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[15px] text-secondary">call</span>
+            <a href="tel:9922381104" class="text-white font-bold hover:text-secondary">9922381104</a>
+          </div>
+          <a href="https://wa.me/919922381104" target="_blank" rel="noopener" class="flex items-center gap-2 text-emerald-400 hover:underline font-semibold">
+            <span class="material-symbols-outlined text-[15px]">chat</span>
+            WhatsApp Direct Chat
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+      <p>© 2025 Roshni Optical. All rights reserved.</p>
+      <div class="flex items-center gap-3">
+        <a href="#location" class="hover:text-white transition-colors">Jhastam Chowk, Shop No. 59</a>
+        <span>•</span>
+        <a href="tel:9922381104" class="hover:text-white transition-colors">Call 9922381104</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =============================================
+     FLOATING WHATSAPP BUTTON
+     ============================================= -->
+<a href="https://wa.me/919922381104?text=Hello%20Roshni%20Optical%2C%20I%20have%20an%20eyewear%20enquiry" target="_blank" rel="noopener"
+   aria-label="Chat on WhatsApp"
+   class="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 flex items-center gap-2 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-2xl transition-all hover:scale-105 border-2 border-white">
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.813 2.796.814 3.182 0 5.768-2.587 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.498-4.471 9.969-9.969 9.969-1.758 0-3.411-.462-4.851-1.267l-5.18 1.36 1.383-5.053c-.927-1.523-1.465-3.313-1.465-5.009 0-5.498 4.471-9.969 9.969-9.969 5.498 0 9.969 4.471 9.969 9.969z"/></svg>
+  <span class="hidden sm:inline">WhatsApp Us</span>
+</a>
+
+<!-- =============================================
+     MOBILE BOTTOM DOCK
+     ============================================= -->
+<div class="mobile-dock fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-outline/30 px-2 py-2 gap-2">
+  <a href="tel:9922381104" class="flex-1 flex flex-col items-center py-2 rounded-xl bg-primary text-white text-xs font-bold gap-1">
+    <span class="material-symbols-outlined text-[20px]">call</span> Call
+  </a>
+  <a href="https://wa.me/919922381104" target="_blank" rel="noopener" class="flex-1 flex flex-col items-center py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold gap-1">
+    <span class="material-symbols-outlined text-[20px]">chat</span> WhatsApp
+  </a>
+  <a href="https://maps.google.com/?q=Roshni+Optical+Jhastam+Chowk" target="_blank" rel="noopener" class="flex-1 flex flex-col items-center py-2 rounded-xl bg-secondary/20 text-on-surface text-xs font-bold gap-1">
+    <span class="material-symbols-outlined text-[20px] text-secondary">directions</span> Directions
+  </a>
+  <a href="#contact" class="flex-1 flex flex-col items-center py-2 rounded-xl bg-surface-high text-on-surface text-xs font-bold gap-1">
+    <span class="material-symbols-outlined text-[20px] text-primary">calendar_month</span> Book Test
+  </a>
+</div>
+
+<!-- =============================================
+     ADMIN PANEL MODAL
+     ============================================= -->
+<div id="adminModal" class="admin-modal fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm items-center justify-center p-4">
+  <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+    <!-- Admin Header -->
+    <div class="sticky top-0 bg-primary text-white px-6 py-4 flex items-center justify-between rounded-t-3xl">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[22px] text-secondary">admin_panel_settings</span>
+        <h2 class="font-headline text-lg font-bold">Admin Panel — Collections</h2>
+      </div>
+      <button onclick="closeAdmin()" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-all">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Admin Password Check -->
+    <div id="adminLogin" class="p-6 flex flex-col gap-4">
+      <p class="text-sm text-on-surface-muted">Enter admin password to manage collections.</p>
+      <div class="flex gap-2">
+        <input type="password" id="adminPassword" placeholder="Enter password" class="flex-1 px-4 py-2.5 rounded-xl border border-outline/50 text-sm focus:outline-none focus:border-primary"/>
+        <button onclick="checkAdminPassword()" class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary-dark transition-all">Login</button>
+      </div>
+      <p class="text-xs text-on-surface-muted">Default password: <code class="bg-surface-low px-2 py-0.5 rounded font-mono">roshni2025</code></p>
+    </div>
+
+    <!-- Admin Content (hidden until login) -->
+    <div id="adminContent" class="hidden p-6 flex flex-col gap-6">
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-3">
+        <div class="bg-surface-low rounded-xl p-3 text-center">
+          <div class="font-headline text-2xl font-bold text-primary" id="admin-total">0</div>
+          <div class="text-xs text-on-surface-muted">Total Items</div>
+        </div>
+        <div class="bg-emerald-50 rounded-xl p-3 text-center">
+          <div class="font-headline text-2xl font-bold text-emerald-700" id="admin-cats">0</div>
+          <div class="text-xs text-on-surface-muted">Categories</div>
+        </div>
+        <div class="bg-secondary/10 rounded-xl p-3 text-center">
+          <div class="font-headline text-2xl font-bold text-secondary" id="admin-badges">0</div>
+          <div class="text-xs text-on-surface-muted">Badged Items</div>
+        </div>
+      </div>
+
+      <!-- Add New Form -->
+      <div class="bg-surface-low rounded-2xl p-5 border border-outline/20">
+        <h3 class="font-bold text-base text-on-surface mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-primary">add_circle</span>
+          Add New Collection Item
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">Product Name *</label>
+            <input type="text" id="new-name" placeholder="e.g. Classic Round Frames" class="px-3 py-2 rounded-xl border border-outline/50 text-sm focus:outline-none focus:border-primary"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">Category *</label>
+            <select id="new-cat" class="px-3 py-2 rounded-xl border border-outline/50 text-sm focus:outline-none focus:border-primary">
+              <option value="Spectacles">Spectacles</option>
+              <option value="Sunglasses">Sunglasses</option>
+              <option value="Prescription">Prescription</option>
+              <option value="Contact Lenses">Contact Lenses</option>
+              <option value="Premium">Premium</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-1 sm:col-span-2">
+            <label class="text-xs font-bold text-on-surface">Description *</label>
+            <textarea id="new-desc" rows="2" placeholder="Short description of the product..." class="px-3 py-2 rounded-xl border border-outline/50 text-sm focus:outline-none focus:border-primary resize-none"></textarea>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">Badge (optional)</label>
+            <input type="text" id="new-badge" placeholder="e.g. Bestseller, New, Trending" class="px-3 py-2 rounded-xl border border-outline/50 text-sm focus:outline-none focus:border-primary"/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-bold text-on-surface">Image Path (optional)</label>
+            <input type="text" id="new-img" placeholder="images/my-product.jpg" class="px-3 py-2 rounded-xl border border-outline/50 text-sm focus:outline-none focus:border-primary"/>
+          </div>
+        </div>
+        <button onclick="addCollection()" class="mt-4 w-full py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary-dark transition-all flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">add</span> Add Item
+        </button>
+      </div>
+
+      <!-- Items List -->
+      <div>
+        <h3 class="font-bold text-base text-on-surface mb-3 flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-primary">list</span>
+          All Collections
+        </h3>
+        <div class="flex flex-col gap-2" id="admin-list"></div>
+      </div>
+
+      <!-- Export/Import -->
+      <div class="flex gap-2">
+        <button onclick="exportData()" class="flex-1 py-2 text-xs font-bold rounded-xl border border-outline/40 text-on-surface hover:bg-surface-low flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">download</span> Export Backup
+        </button>
+        <label class="flex-1 py-2 text-xs font-bold rounded-xl border border-outline/40 text-on-surface hover:bg-surface-low flex items-center justify-center gap-1.5 cursor-pointer">
+          <span class="material-symbols-outlined text-[16px]">upload</span> Import Backup
+          <input type="file" accept=".json" onchange="importData(event)" class="hidden"/>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     JAVASCRIPT
+     ============================================= -->
+<script>
+// ============== DEFAULT COLLECTIONS DATA ==============
+const DEFAULT_COLLECTIONS = [
+  { id: 1, name: "Classic Round Frames", cat: "Spectacles", desc: "Timeless circular frames in multiple colors, featherweight and flexible for daily wear.", badge: "Bestseller", img: "" },
+  { id: 2, name: "Aviator Sunglasses", cat: "Sunglasses", desc: "UV400 protected aviators with polarized lenses to deflect road and outdoor glare.", badge: "Trending", img: "images/04_sunglasses_collection.jpg" },
+  { id: 3, name: "Blue Cut Computer Glasses", cat: "Prescription", desc: "Anti-reflective blue-ray filtering lenses to reduce screen strain and dry eyes.", badge: "Popular", img: "" },
+  { id: 4, name: "Daily Contact Lenses", cat: "Contact Lenses", desc: "High oxygen permeability hydrogel contacts for maximum comfort and crisp vision.", badge: "", img: "" },
+  { id: 5, name: "Designer Premium Frames", cat: "Premium", desc: "Handcrafted acetate frames with German hinges and champagne gold metallic details.", badge: "Premium", img: "images/03_counter_frame_display.jpg" },
+  { id: 6, name: "Wayfarer Sunglasses", cat: "Sunglasses", desc: "Iconic trapezoidal shape with scratch-resistant gradient tints for all face types.", badge: "Trending", img: "images/08_trendy_sunglasses_display.jpg" },
+  { id: 7, name: "Progressive Lenses", cat: "Prescription", desc: "Seamless progression from distance to reading vision — no visible demarcation line.", badge: "Advanced", img: "" },
+  { id: 8, name: "Kids Spectacles", cat: "Spectacles", desc: "Unbreakable TR-90 rubber frames for young faces — colorful, durable & study-ready.", badge: "New", img: "images/01_frame_collection_tray.jpg" },
+];
+
+// ============== DATA MANAGEMENT ==============
+function getCollections() {
+  try {
+    const saved = localStorage.getItem('roshni_collections');
+    return saved ? JSON.parse(saved) : DEFAULT_COLLECTIONS;
+  } catch { return DEFAULT_COLLECTIONS; }
+}
+
+function saveCollections(data) {
+  localStorage.setItem('roshni_collections', JSON.stringify(data));
+}
+
+// ============== COLLECTION CARD RENDER ==============
+function getCatColor(cat) {
+  const colors = {
+    'Spectacles': 'bg-blue-50 text-blue-700',
+    'Sunglasses': 'bg-amber-50 text-amber-700',
+    'Prescription': 'bg-purple-50 text-purple-700',
+    'Contact Lenses': 'bg-teal-50 text-teal-700',
+    'Premium': 'bg-yellow-50 text-yellow-800',
+  };
+  return colors[cat] || 'bg-surface-high text-on-surface-muted';
+}
+
+function getBadgeColor(badge) {
+  if (!badge) return '';
+  const b = badge.toLowerCase();
+  if (b.includes('best') || b.includes('popular')) return 'bg-secondary text-on-surface';
+  if (b.includes('trend')) return 'bg-primary text-white';
+  if (b.includes('new')) return 'bg-emerald-500 text-white';
+  if (b.includes('premium') || b.includes('advan')) return 'bg-on-surface text-white';
+  return 'bg-surface-high text-on-surface';
+}
+
+function renderCollections(cat = 'all') {
+  const data = getCollections();
+  const grid = document.getElementById('collections-grid');
+  const filtered = cat === 'all' ? data : data.filter(i => i.cat === cat);
+
+  grid.innerHTML = filtered.map(item => `
+    <div class="collection-card group bg-white rounded-3xl p-5 flex flex-col justify-between shadow-md hover:shadow-xl border border-outline/20 transition-all">
+      <div>
+        <div class="relative w-full h-48 rounded-2xl bg-surface-low overflow-hidden flex items-center justify-center mb-4">
+          ${item.badge ? `<span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm ${getBadgeColor(item.badge)}">${item.badge}</span>` : ''}
+          ${item.img
+            ? `<img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300" onerror="this.parentElement.innerHTML+='<div class=\'flex items-center justify-center w-full h-full\'><span class=\'material-symbols-outlined text-[48px] text-outline\'>eyeglasses</span></div>'; this.remove()"/>`
+            : `<div class="flex items-center justify-center w-full h-full"><span class="material-symbols-outlined text-[48px] text-outline">eyeglasses</span></div>`
+          }
+        </div>
+        <span class="text-[10px] font-bold text-secondary uppercase tracking-wider">${item.cat}</span>
+        <h3 class="font-headline text-lg font-bold text-on-surface mt-1">${item.name}</h3>
+        <p class="text-xs text-on-surface-muted mt-2 leading-relaxed">${item.desc}</p>
+      </div>
+      <div class="pt-4 mt-4 border-t border-surface-low flex items-center justify-between">
+        <span class="text-xs font-bold text-primary flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">check_circle</span> In Stock
+        </span>
+        <a href="https://wa.me/919922381104?text=Hi%2C%20I%20am%20interested%20in%20${encodeURIComponent(item.name)}" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white text-xs font-bold transition-all border border-emerald-200">
+          <span class="material-symbols-outlined text-[14px]">chat</span> Enquire
+        </a>
+      </div>
+    </div>
+  `).join('');
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="col-span-4 text-center py-12 text-on-surface-muted text-sm">No items in this category. <button onclick="openAdmin()" class="text-primary underline">Add some →</button></div>`;
+  }
+}
+
+// ============== FILTER BUTTONS ==============
+function filterCollections(cat) {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active-filter', 'bg-primary', 'text-white');
+    btn.classList.add('bg-surface-high', 'text-on-surface-muted');
+  });
+  const activeBtn = [...document.querySelectorAll('.filter-btn')].find(b => b.getAttribute('onclick')?.includes(cat));
+  if (activeBtn) {
+    activeBtn.classList.add('bg-primary', 'text-white');
+    activeBtn.classList.remove('bg-surface-high', 'text-on-surface-muted');
+  }
+  renderCollections(cat);
+}
+
+// ============== NAVBAR MOBILE TOGGLE ==============
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const icon = document.getElementById('hamburger-icon');
+  menu.classList.toggle('hidden');
+  icon.textContent = menu.classList.contains('hidden') ? 'menu' : 'close';
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.add('hidden');
+  document.getElementById('hamburger-icon').textContent = 'menu';
+}
+
+// ============== CONTACT FORM → WHATSAPP ==============
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('nameInput').value.trim();
+  const phone = document.getElementById('phoneInput').value.trim();
+  const service = document.getElementById('serviceSelect').value;
+  const time = document.getElementById('preferredTime').value.trim();
+  const notes = document.getElementById('notesInput').value.trim();
+
+  let text = `Hello Roshni Optical 👓%0A%0A`;
+  text += `*Name:* ${encodeURIComponent(name)}%0A`;
+  text += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+  text += `*Service:* ${encodeURIComponent(service)}%0A`;
+  if (time) text += `*Preferred Time:* ${encodeURIComponent(time)}%0A`;
+  if (notes) text += `*Notes:* ${encodeURIComponent(notes)}%0A`;
+
+  document.getElementById('formSuccess').classList.remove('hidden');
+  setTimeout(() => {
+    window.open(`https://wa.me/919922381104?text=${text}`, '_blank');
+    document.getElementById('contactForm').reset();
+    setTimeout(() => document.getElementById('formSuccess').classList.add('hidden'), 3000);
+  }, 800);
+}
+
+// ============== ADMIN PANEL ==============
+const ADMIN_PASSWORD = 'roshni2025';
+
+function openAdmin() {
+  document.getElementById('adminModal').classList.add('open');
+  document.getElementById('adminLogin').classList.remove('hidden');
+  document.getElementById('adminContent').classList.add('hidden');
+}
+
+function closeAdmin() {
+  document.getElementById('adminModal').classList.remove('open');
+}
+
+function checkAdminPassword() {
+  const pwd = document.getElementById('adminPassword').value;
+  if (pwd === ADMIN_PASSWORD) {
+    document.getElementById('adminLogin').classList.add('hidden');
+    document.getElementById('adminContent').classList.remove('hidden');
+    renderAdminList();
+    updateAdminStats();
+  } else {
+    alert('❌ Wrong password! Try: roshni2025');
+  }
+}
+
+function renderAdminList() {
+  const data = getCollections();
+  const list = document.getElementById('admin-list');
+  list.innerHTML = data.map((item, idx) => `
+    <div class="flex items-start gap-3 p-3 bg-surface-low rounded-xl border border-outline/20">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="font-bold text-sm text-on-surface">${item.name}</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-surface-high text-on-surface-muted">${item.cat}</span>
+          ${item.badge ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-secondary/20 text-secondary">${item.badge}</span>` : ''}
+        </div>
+        <p class="text-xs text-on-surface-muted mt-1 truncate">${item.desc}</p>
+      </div>
+      <button onclick="deleteCollection(${item.id})" class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-xl bg-red-50 hover:bg-red-500 hover:text-white text-red-500 transition-all">
+        <span class="material-symbols-outlined text-[18px]">delete</span>
+      </button>
+    </div>
+  `).join('');
+}
+
+function updateAdminStats() {
+  const data = getCollections();
+  document.getElementById('admin-total').textContent = data.length;
+  document.getElementById('admin-cats').textContent = new Set(data.map(d => d.cat)).size;
+  document.getElementById('admin-badges').textContent = data.filter(d => d.badge).length;
+}
+
+function addCollection() {
+  const name = document.getElementById('new-name').value.trim();
+  const cat = document.getElementById('new-cat').value;
+  const desc = document.getElementById('new-desc').value.trim();
+  const badge = document.getElementById('new-badge').value.trim();
+  const img = document.getElementById('new-img').value.trim();
+
+  if (!name || !desc) { alert('Please fill Name and Description!'); return; }
+
+  const data = getCollections();
+  const newId = data.length > 0 ? Math.max(...data.map(d => d.id)) + 1 : 1;
+  data.push({ id: newId, name, cat, desc, badge, img });
+  saveCollections(data);
+
+  // Clear form
+  ['new-name','new-desc','new-badge','new-img'].forEach(id => document.getElementById(id).value = '');
+
+  renderAdminList();
+  updateAdminStats();
+  renderCollections();
+  alert('✅ Item added successfully!');
+}
+
+function deleteCollection(id) {
+  if (!confirm('Delete this item?')) return;
+  const data = getCollections().filter(d => d.id !== id);
+  saveCollections(data);
+  renderAdminList();
+  updateAdminStats();
+  renderCollections();
+}
+
+function exportData() {
+  const data = getCollections();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'roshni_collections_backup.json'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      saveCollections(data);
+      renderAdminList();
+      updateAdminStats();
+      renderCollections();
+      alert('✅ Data imported successfully!');
+    } catch {
+      alert('❌ Invalid file format!');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// Close admin on backdrop click
+document.getElementById('adminModal').addEventListener('click', function(e) {
+  if (e.target === this) closeAdmin();
+});
+
+// ============== INIT ==============
+document.addEventListener('DOMContentLoaded', () => {
+  renderCollections();
+  // Set first filter active
+  const allBtn = document.querySelector('[data-cat="all"]');
+  if (allBtn) { allBtn.classList.add('bg-primary', 'text-white'); allBtn.classList.remove('bg-surface-high', 'text-on-surface-muted'); }
+});
+</script>
+
+</body>
+</html>
